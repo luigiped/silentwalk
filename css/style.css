@@ -20,7 +20,32 @@
 
 *, *::before, *::after { box-sizing: border-box; }
 html { -webkit-text-size-adjust: 100%; text-size-adjust: 100%; }
-html, body { margin: 0; background: var(--bg); color: var(--cream); }
+html { margin: 0; background: #1E0A14; color: var(--cream); }
+body { margin: 0; background: transparent; color: var(--cream); }
+
+/* ---------- Sfondo: tramonto della locandina + logo in filigrana ---------- */
+body::before,
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+}
+body::before {
+  background:
+    radial-gradient(130% 60% at 50% 112%, rgba(245, 18, 31, .55) 0%, rgba(245, 18, 31, .18) 45%, transparent 70%),
+    radial-gradient(90% 55% at 100% -8%, rgba(254, 37, 168, .38) 0%, transparent 65%),
+    radial-gradient(70% 45% at -10% 30%, rgba(254, 37, 168, .14) 0%, transparent 70%),
+    linear-gradient(180deg, #2C1020 0%, #1E0A14 50%, #2A0B12 100%);
+}
+body::after {
+  background: url("../assets/logo-freespace.png") center 40% / min(135vw, 640px) no-repeat;
+  opacity: 0;
+  transition: opacity 1.2s ease;
+}
+/* filigrana solo sulla landing, per non sovrapporsi a loader e logo animato */
+body:has(#s-landing.is-active)::after { opacity: .08; }
 body {
   font-family: var(--font);
   line-height: 1.5;
@@ -38,6 +63,7 @@ button { font: inherit; color: inherit; cursor: pointer; }
 .screen {
   position: fixed;
   inset: 0;
+  z-index: 1;
   display: grid;
   place-items: center;
   padding: calc(24px + var(--safe-t)) calc(24px + var(--safe-r)) calc(24px + var(--safe-b)) calc(24px + var(--safe-l));

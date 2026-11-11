@@ -12,7 +12,9 @@ HTML + CSS + JS senza framework né build step, servita da GitHub Pages. Nessun 
 - `scripts/encode_audio.sh`: ricodifica dell'audio con ffmpeg.
 - `scripts/encode_lame.py`: alternativa senza ffmpeg (afconvert di macOS + LAME), usata per la traccia attuale.
 - `scripts/serve.py`: server locale con Range/206 (per provare da iPhone in Wi-Fi).
-- `scripts/make_qr.py`: QR (correzione H, quiet zone 4) in `qr/` come SVG e PNG.
+- `scripts/make_qr.py`: QR (correzione H, quiet zone 4) in `qr/` come SVG e PNG, classico e personalizzato FreeSpace con logo.
+
+**Istruzioni operative** (cambiare la traccia, pubblicare modifiche, QR, smontaggio): vedi [ISTRUZIONI.md](ISTRUZIONI.md).
 
 ## Note tecniche
 

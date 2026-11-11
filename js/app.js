@@ -170,7 +170,7 @@
   function reloadFrom(t, autoplay) {
     pendingSeek = t;
     errEl.hidden = true;
-    a.src = SRC + "?r=" + Date.now();
+    a.src = SRC + (SRC.indexOf("?") < 0 ? "?" : "&") + "r=" + Date.now();
     a.load();
     if (autoplay) doPlay();
   }

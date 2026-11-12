@@ -36,3 +36,4 @@ python3 scripts/make_qr.py https://UTENTE.github.io/silentwalk/
 gh api -X DELETE repos/UTENTE/silentwalk/pages     # spegne la pagina (ripubblicabile, stesso URL)
 gh repo delete UTENTE/silentwalk --yes             # oppure elimina il repo
 ```
+..
